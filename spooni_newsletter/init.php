@@ -9,6 +9,7 @@ function plugin_menu() {
     add_menu_page("Newsletter", "Newsletter", "manage_options", "spooni_newsletter", "main_page");
     add_submenu_page( "spooni_newsletter", "Email templates", "Templates", "manage_options", "spooni_newsletter_templates", "templates_page");
     add_submenu_page( "spooni_newsletter", "Groups", "Groups", "manage_options", "spooni_newsletter_groups", "templates_groups");
+    add_submenu_page( "spooni_newsletter", "Features", "Features", "manage_options", "spooni_newsletter_features", "templates_features");
 }
 
 function user_profile_fields($user) { 

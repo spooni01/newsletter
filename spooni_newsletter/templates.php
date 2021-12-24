@@ -19,4 +19,9 @@ function templates_groups() {
 		include(plugin_dir_path( __FILE__ )."templates/page_groups.php");
 }
 
+function templates_features() {
+    if (can_manage_options()) 
+		include(plugin_dir_path( __FILE__ )."templates/page_features.php");
+}
+
 ?>
