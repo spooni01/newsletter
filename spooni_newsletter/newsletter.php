@@ -8,8 +8,11 @@
  * Author URI: http://www.adam.liziciar.sk
  */
 
+// Functions for plugin
 include(plugin_dir_path( __FILE__ )."functions.php");
+// Inicialization
 include(plugin_dir_path( __FILE__ )."init.php");
-include(plugin_dir_path( __FILE__ )."pages.php");
+// Plugin templates
+include(plugin_dir_path( __FILE__ )."templates.php");
 
 ?>

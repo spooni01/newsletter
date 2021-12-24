@@ -5,7 +5,7 @@ function can_manage_options() {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
         return false;
 	}
-
+    
     return true;
 }
 
