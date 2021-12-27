@@ -8,13 +8,13 @@
  * Author URI: http://www.adam.liziciar.sk
  */
 
-// Functions for plugin
+// Functions
 include(plugin_dir_path( __FILE__ )."functions.php");
 
-// Inicialization
+// Admin menu
 include(plugin_dir_path( __FILE__ )."admin_menu.php");
 
-// User profile
+// User-related functions and templates
 include(plugin_dir_path( __FILE__ )."user_profile.php");
 
 // Custom post types and custom taxonomies

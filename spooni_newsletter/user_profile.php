@@ -4,7 +4,7 @@ add_action("edit_user_profile", "user_profile_fields");
 add_action("personal_options_update", "save_user_profile_fields");
 add_action("edit_user_profile_update", "save_user_profile_fields");
 
-/** User profile **/
+/** USER PROFILE **/
 function user_profile_fields($user) { 
     include(plugin_dir_path( __FILE__ )."templates/user_profile.php");
 }

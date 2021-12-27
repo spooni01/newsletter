@@ -1,11 +1,7 @@
 <?php
-// hook into the init action and call create_book_taxonomies when it fires
 add_action( "init", "create_domain_emails_taxonomies");
 
-// create two taxonomies, genres and writers for the post type "book"
 function create_domain_emails_taxonomies() {
-
-    // Add new taxonomy, NOT hierarchical (like tags)
     $labels = array(
         "name"              => _x("Domain emails", "taxonomy general name" ),
         "singular_name"     => _x("Domain email", "taxonomy singular name" ),
