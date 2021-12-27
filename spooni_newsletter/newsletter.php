@@ -10,9 +10,20 @@
 
 // Functions for plugin
 include(plugin_dir_path( __FILE__ )."functions.php");
+
 // Inicialization
-include(plugin_dir_path( __FILE__ )."init.php");
-// Plugin templates
-include(plugin_dir_path( __FILE__ )."templates.php");
+include(plugin_dir_path( __FILE__ )."admin_menu.php");
+
+// User profile
+include(plugin_dir_path( __FILE__ )."user_profile.php");
+
+// Custom post types and custom taxonomies
+include(plugin_dir_path( __FILE__ )."custom_types/custom_post_emails.php");
+include(plugin_dir_path( __FILE__ )."custom_types/custom_post_automated_emails.php");
+include(plugin_dir_path( __FILE__ )."custom_types/custom_taxonomy_groups.php");
+include(plugin_dir_path( __FILE__ )."custom_types/custom_taxonomy_domain_emails.php");
+
+// Send e-mails
+include(plugin_dir_path( __FILE__ )."send.php");
 
 ?>
