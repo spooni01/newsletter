@@ -15,7 +15,7 @@ function save_user_profile_fields($user_id) {
     if (!current_user_can("edit_user", $user_id)) 
         return false; 
 
-    $terms = get_terms("groups", array(
+    $terms = get_terms("spooni_newsletter_groups", array(
         "hide_empty" => 0,
     ) );
 

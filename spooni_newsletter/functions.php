@@ -55,8 +55,8 @@ function get_emails_by_meta_value_of_taxonomy($slugs_of_groups, $meta_value) {
 /** OTHER FUNCTIONS **/
 
 function can_manage_options() {
-    if ( !current_user_can( 'manage_options' ) )  {
-		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+    if ( !current_user_can("manage_options") )  {
+		wp_die( __("You do not have sufficient permissions to access this page."));
         return false;
 	}
     

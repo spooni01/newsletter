@@ -5,7 +5,7 @@ add_action("publish_emails", "send_emails");
 // taxonomy that is checked in custom post type 'email'
 function send_emails($post_id) {
     // Get all slugs that are checked in custom post type 'email'   
-    $slugs_of_groups = get_slugs_of_groups_by_post_id($post_id, "groups");
+    $slugs_of_groups = get_slugs_of_groups_by_post_id($post_id, "spooni_newsletter_groups");
 
     // Get emails of all users that subscribe one of taxonomy 'Groups'
     // that is checked in custom post type 'email'.

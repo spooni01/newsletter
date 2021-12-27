@@ -1,9 +1,9 @@
 <?php
 
-function custom_post_emails() {
+function custom_post_spooni_newsletter_emails() {
     register_post_type("emails",
         array(
-            "labels"      => array(
+            "labels" => array(
                 "name"               => _x("E-mails", "post type general name"),
                 "singular_name"      => _x("E-mail", "post type singular name"),
                 "add_new"            => _x("Add new", "book"),
@@ -25,6 +25,7 @@ function custom_post_emails() {
         )
     );
 }
-add_action("init", "custom_post_emails");
+
+add_action("init", "custom_post_spooni_newsletter_emails");
 
 ?>

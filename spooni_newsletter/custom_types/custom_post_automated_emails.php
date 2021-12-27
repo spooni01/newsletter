@@ -1,6 +1,6 @@
 <?php
 
-function custom_post_automated_emails() {
+function custom_post_spooni_newsletter_automated_emails() {
     register_post_type("automated_emails",
         array(
             "labels"      => array(
@@ -25,6 +25,6 @@ function custom_post_automated_emails() {
         )
     );
 }
-add_action("init", "custom_post_automated_emails");
+add_action("init", "custom_post_spooni_newsletter_automated_emails");
 
 ?>

@@ -25,6 +25,6 @@ function create_groups_taxonomies() {
         "show_in_nav_menus" => true,
     );
 
-    register_taxonomy( "groups", array("emails", "automated_emails"), $args );  
+    register_taxonomy( "spooni_newsletter_groups", array("emails", "automated_emails"), $args );  
 }
 ?>
