@@ -14,14 +14,14 @@ function save_user_profile_fields($user_id) {
         return; 
     if (!current_user_can("edit_user", $user_id)) 
         return false; 
+        
+    $terms = get_terms("spooni_newsletter_groups", array("hide_empty" => 0));
 
-    $terms = get_terms("spooni_newsletter_groups", array(
-        "hide_empty" => 0,
-    ) );
-
-    foreach ($terms as $term) {
+    foreach ($terms as $term) 
         update_user_meta($user_id, $term->slug, $_POST[$term->slug]);
-    }
+    
+    // Generate new hash if is not set
+    save_hash($user_id);
             
     return true;
 }

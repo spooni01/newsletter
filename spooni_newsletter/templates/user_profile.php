@@ -17,6 +17,12 @@
                     </td>
                 </tr>
             <?php endforeach; ?>
-    <?php endif; ?>    
+    <?php endif; ?>  
+
+    <?php /* Display user unique hash */ ?>
+    <tr>
+        <th><label>Unique private hash</label></th>
+        <td><i><?php echo get_user_hash($user->ID, "Not set yet.");?></i> </td>
+    </tr>  
 </table>
 <hr>

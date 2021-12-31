@@ -52,6 +52,43 @@ function get_emails_by_meta_value_of_taxonomy($slugs_of_groups, $meta_value) {
 }
 
 
+/** HASH FUNCTIONS **/
+
+// Get unique hash of user.
+function get_user_hash($user_id, $return_text = NULL) {
+    $hash = get_user_meta($user_id, 'spooni_newsletter_unique_hash', true);
+    if($hash == "") {
+        if($return_text == "")
+            return NULL;
+        else    
+            return $return_text;
+    }
+
+    return $hash;
+}
+
+function generate_hash($length = 30, $special_chars = false) {
+    $chars =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    if($special_chars)
+        $chars .= "`-=~!@#$%^&*()_+,./<>?;:[]{}\|";
+    
+    $hash = "";
+    $max = strlen($chars) - 1;
+  
+    for ($i=0; $i < $length; $i++)
+        $hash .= $chars[random_int(0, $max)];
+  
+    return $hash;
+}
+
+// Save unique hash to user by ID. If you want to generate new hash
+// for user, you must set $generate_new to true.
+function save_hash($user_id, $generate_new = false) {
+    if(get_user_hash($user_id) == NULL || $generate_new == true) 
+        update_user_meta($user_id, "spooni_newsletter_unique_hash", generate_hash());
+}
+
+
 /** OTHER FUNCTIONS **/
 
 function can_manage_options() {
