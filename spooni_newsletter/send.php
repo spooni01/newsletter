@@ -29,12 +29,7 @@ function send_emails($post_id) {
         $user = get_user_by("email", $email);
         $hash = get_user_hash($user->ID);
         $url = get_bloginfo('wpurl');
-        $mail_footer = "<div style='text-align:center;width:100%'>
-                        <div style='margin-top:2rem; font-size:12px; color: #787878; text-align:center;width:400px;margin-right: auto; margin-left: auto'>
-                        Tento mail vám bol doručený, lebo ste sa prihlásili do nášho newslettera. Nechcete už odoberať tieto e-maily? 
-                        <a href='".$url."/newsletter/?hash=".$hash."&usid=".$user->ID."'>Odhlásiť sa možete tu</a>.
-                        </div>
-                        </div>";
+        include(plugin_dir_path( __FILE__ )."/templates/email_footer.php");
 
         wp_mail($email, $post_title, $mail_body.$mail_footer, $headers);   
     }

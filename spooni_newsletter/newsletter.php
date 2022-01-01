@@ -23,6 +23,9 @@ include(plugin_dir_path( __FILE__ )."custom_types/custom_post_automated_emails.p
 include(plugin_dir_path( __FILE__ )."custom_types/custom_taxonomy_groups.php");
 include(plugin_dir_path( __FILE__ )."custom_types/custom_taxonomy_domain_emails.php");
 
+// Custom template for emails
+include(plugin_dir_path( __FILE__ )."custom_types/custom_template_emails.php");
+
 // Send e-mails
 include(plugin_dir_path( __FILE__ )."send.php");
 
