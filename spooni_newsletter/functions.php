@@ -12,7 +12,7 @@ function templates_features() {
 }
 
 
-/** FUNCTIONS FOR TAXONOMIES **/
+/** TAXONOMIES FUNCTIONS **/
 
 // Function will return array of all slugs from specific taxonomy
 // ($taxomomy_slug) that are checked in post ($post_id)
@@ -79,6 +79,14 @@ function generate_hash($length = 30, $special_chars = false) {
         $hash .= $chars[random_int(0, $max)];
   
     return $hash;
+}
+
+// Check, if user $user_id has hash $hash.
+function authenticate_user($hash, $user_id) {
+    if($hash == get_user_hash($user_id))
+        return true;
+    
+    return false;
 }
 
 // Save unique hash to user by ID. If you want to generate new hash

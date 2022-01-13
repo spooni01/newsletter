@@ -29,4 +29,7 @@ include(plugin_dir_path( __FILE__ )."custom_types/custom_template_emails.php");
 // Send e-mails
 include(plugin_dir_path( __FILE__ )."send.php");
 
+// Subscription engine (functions for unsubscribe, working with URL data)
+include(plugin_dir_path( __FILE__ )."subscription_engine.php");
+
 ?>

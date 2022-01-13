@@ -5,7 +5,7 @@ $mail_footer = "
             <a style='color: #787878' href='".get_permalink($post_id)."'>Show email in new tab</a>.
             <br>
             This email was delivered to you because you subscribed to our newsletter. Don't want to subscribe to these emails anymore?<br>
-            <a style='color: #787878' href='".$url."/?src=spooni_newsletter&action=unsubscribe&hash=".$hash."&usid=".$user->ID."'>You can unsubscribe here</a>.
+            <a style='color: #787878' href='".$url."/?src=spooni_newsletter&action=unsubscribe&group=".$slugs_of_groups[0]."&hash=".$hash."&usid=".$user->ID."'>You can unsubscribe here</a>.
         </div>
     </div>";
 ?>
