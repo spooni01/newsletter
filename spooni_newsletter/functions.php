@@ -97,6 +97,31 @@ function save_hash($user_id, $generate_new = false) {
 }
 
 
+/** FUNCTIONS FOR PARAMETERS **/
+
+function parameter_exist($parameter) {
+    if(isset($_GET[$parameter])) 
+        return true;
+
+    return false;
+}
+
+function parameter_equal($parameter, $value) {
+    if(parameter_exist($parameter) && $_GET[$parameter] == $value) 
+        return true;
+    
+    return false;
+}
+
+function necessary_parameters_exist($array) {
+    foreach($array as $parameter) {
+        if(!parameter_exist($parameter))
+            return false;
+    }
+    return true;
+}
+
+
 /** OTHER FUNCTIONS **/
 
 function can_manage_options() {
@@ -106,6 +131,10 @@ function can_manage_options() {
 	}
     
     return true;
+}
+
+function generate_password($length = 15, $special_chars = false) {
+    generate_hash($length, $special_chars);
 }
 
 ?>
