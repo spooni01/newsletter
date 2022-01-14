@@ -20,9 +20,9 @@ function load_subscription_engine_template() {
             die();
         }   
 
-        // Try to subscribe user
+        // Try to subscribe user. If user already exist on a page, just log him into newsletter.
+        // If user not exist, register him and then add him to newsletter.
         if(parameter_equal("action", "add_subscribe") && necessary_parameters_exist(array("group")) && isset($_POST['email'])) {
-            // good : redirect to subscription ok
             if(email_exists($_POST["email"])) {
                 $user = get_user_by("email", $_POST["email"]);
                 update_user_meta($user->ID, $_GET["group"], "subscribed");

@@ -22,9 +22,9 @@ function create_domain_emails_taxonomies() {
         "show_ui"           => true,
         "show_admin_column" => true,
         "query_var"         => true,
-        "show_in_nav_menus" => true,
+        "show_in_nav_menus" => true
     );
 
-    register_taxonomy( "spooni_newsletter_domain_emails", array("emails", "automated_emails"), $args);   
+    //register_taxonomy( "spooni_newsletter_domain_emails", array("emails", "automated_emails"), $args);   
 }
 ?>

@@ -19,7 +19,7 @@ function custom_post_spooni_newsletter_automated_emails() {
             ),
             "description"   => "All e-mails.",
             "public"        => true,
-            "show_in_menu" => "spooni_newsletter",
+            "show_in_menu" => false, //"spooni_newsletter"
             "supports"      =>  array( "title","editor"),
             "has_archive"   => true,
         )
