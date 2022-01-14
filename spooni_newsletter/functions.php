@@ -11,6 +11,11 @@ function templates_features() {
 		include(plugin_dir_path( __FILE__ )."templates/page_features.php");
 }
 
+function templates_statistics() {
+    if (can_manage_options()) 
+		include(plugin_dir_path( __FILE__ )."templates/page_statistics.php");
+}
+
 
 /** TAXONOMIES FUNCTIONS **/
 
