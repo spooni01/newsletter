@@ -1,26 +1,5 @@
 <div class="wrap">
-    <div style="margin-top: 1rem;background: #ffc107;padding:1rem">
-        <h1>Get Pro version</h1>
-        <div>
-            <h2>In the Pro version, you will get access to:</h3>
-            <ul style="font-size:15px;">
-                <li>- writing emails with custom names of your subscribers</li>
-                <li>- custom text at the end of the email</li>
-                <li>- custom desing</li>
-                <li>- widgets on website</li>
-                <li>- statistics of each email</li>
-                <li>- record of all subscriptions and unsubscriptions for each user</li>
-                <li>- scheduling of emails</li>
-                <li>- automatic emails</li>
-                <li>- automatic sending of the best articles once a day / week / month</li>
-                <li>- and more</li>
-            </ul>     
-        </div>
-        <div>
-            <h2><a href="https://github.com/spooni01" target="blank">Get Pro version here.</a></h3>
-        </div>
-    </div>
-
+    
     <div>
         <h1>Spooni Newsletter</h1>
     </div>
@@ -52,7 +31,11 @@
             <?php endif; ?>
         </table>
     </div>
-    
+    <hr>
+    <p>
+        If you want to add users name to email, just add <i>{{first_name}}</i> into text.
+        You can also get <i>{{last_name}}</i>, <i>{{name}}</i>, or <i>{{email}}</i>.
+    </p>
     <hr>
     <p>
         You are now using <span style="color: red;"><b><i>demo version</i></b></span>.

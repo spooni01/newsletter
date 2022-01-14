@@ -29,9 +29,10 @@ function send_emails($post_id) {
         $user = get_user_by("email", $email);
         $hash = get_user_hash($user->ID);
         $url = get_bloginfo('wpurl');
+        $tmp_mail_body = change_variables_to_real_data($mail_body, $user);
         include(plugin_dir_path( __FILE__ )."/templates/email_footer.php");
 
-        wp_mail($email, $post_title, $mail_body.$mail_footer, $headers);   
+        wp_mail($email, $post_title, $tmp_mail_body.$mail_footer, $headers);   
     }
 }
 

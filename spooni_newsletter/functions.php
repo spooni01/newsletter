@@ -121,7 +121,6 @@ function necessary_parameters_exist($array) {
     return true;
 }
 
-
 /** OTHER FUNCTIONS **/
 
 function can_manage_options() {
@@ -136,5 +135,16 @@ function can_manage_options() {
 function generate_password($length = 15, $special_chars = false) {
     generate_hash($length, $special_chars);
 }
+
+function change_variables_to_real_data($mail_body, $user) {
+    $variables = array("{{first_name}}", "{{last_name}}", "{{name}}", "{{email}}");
+    $user_data = array($user->first_name, $user->last_name, $user->first_name." ".$user->last_name, $user->user_email);
+
+    $mail_body = str_replace($variables, $user_data,  $mail_body);
+
+    return $mail_body;
+}
+
+
 
 ?>
