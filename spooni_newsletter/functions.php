@@ -150,6 +150,15 @@ function change_variables_to_real_data($mail_body, $user) {
     return $mail_body;
 }
 
+function add_num_in_post_meta($post_id, $meta_key) {
+    if(empty(get_post_meta($post_id, $meta_key, true))) 
+        $num = 0;
+    else 
+        $num = get_post_meta($post_id, $meta_key, true);
+    
+    update_post_meta($post_id, $meta_key, $num);
+}
+
 
 
 ?>

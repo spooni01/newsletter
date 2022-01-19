@@ -17,13 +17,12 @@ include(plugin_dir_path( __FILE__ )."admin_menu.php");
 // User-related functions and templates
 include(plugin_dir_path( __FILE__ )."user_profile.php");
 
-// Custom post types and custom taxonomies
+// Include custom post types, taxonomies, templates and metaboxes
 include(plugin_dir_path( __FILE__ )."custom_types/custom_post_emails.php");
 include(plugin_dir_path( __FILE__ )."custom_types/custom_post_automated_emails.php");
 include(plugin_dir_path( __FILE__ )."custom_types/custom_taxonomy_groups.php");
 include(plugin_dir_path( __FILE__ )."custom_types/custom_taxonomy_domain_emails.php");
-
-// Custom template for emails
+include(plugin_dir_path( __FILE__ )."custom_types/metabox_email_statistics.php");
 include(plugin_dir_path( __FILE__ )."custom_types/custom_template_emails.php");
 
 // Send e-mails

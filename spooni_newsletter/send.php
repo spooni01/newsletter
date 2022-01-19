@@ -24,6 +24,7 @@ function send_emails($post_id) {
     $post_title = get_the_title($post_id); 
     $mail_body = get_the_content($post_id);
     $headers = array("Content-Type: text/html; charset=UTF-8");
+    $num_of_emails = 0;
 
     foreach($emails as $email) {
         $user = get_user_by("email", $email);
@@ -33,7 +34,12 @@ function send_emails($post_id) {
         include(plugin_dir_path( __FILE__ )."/templates/email_footer.php");
 
         wp_mail($email, $post_title, $tmp_mail_body.$mail_footer, $headers);   
+        $num_of_emails++;
     }
+
+    // Set meta for statistics 
+    add_num_in_post_meta($post_id, "spooni_newsletter_email_seen");
+    update_post_meta($post_id, "spooni_newsletter_email_sends", $num_of_emails);    
 }
 
 ?>

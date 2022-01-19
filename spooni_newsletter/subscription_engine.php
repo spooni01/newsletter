@@ -11,6 +11,10 @@ function load_subscription_engine_template() {
         // Save that user see email
         if(parameter_equal("action", "email_seen") && necessary_parameters_exist(array("usid", "mail_id", "hash")) && authenticate_user($_GET["hash"], $_GET["usid"])) {
             update_user_meta($_GET["usid"], "spooni_newsletter_email_seen_".$_GET["mail_id"], date("Y-m-d h:i:s"));
+            
+            $total_num_of_seen = get_post_meta($_GET["mail_id"], "spooni_newsletter_email_seen", true);
+            $total_num_of_seen++;
+            update_post_meta($_GET["mail_id"], "spooni_newsletter_email_seen", $total_num_of_seen);
         }
         
         // Unsubscribe
