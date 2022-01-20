@@ -1,6 +1,6 @@
 <?php
 
-/** TEMPLATE FOR POST TYPE NEWSLETTER **/
+/** PUBLIC TEMPLATE FOR POST TYPE EMAILS **/
 
 add_filter("single_template", "load_single_newsletter_template");
 

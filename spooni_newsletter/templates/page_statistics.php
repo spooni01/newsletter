@@ -1,14 +1,3 @@
-<?php
-    /*$num_of_emails = get_post_meta($post->ID, "spooni_newsletter_email_sends", true);
-    $total_num_of_seen = get_post_meta($post->ID, "spooni_newsletter_email_seen", true);
-    $users_seen_email = get_users(array(
-        "meta_key" => "spooni_newsletter_email_seen_".$post->ID,
-        "orderby" => "meta_value",
-        "order" => "DESC"
-    ));
-    $num_of_opened_emails = count($users_seen_email);*/
-  
-?>
 <div class="wrap">
     <div>
         <h1>Statistics for all emails</h1>

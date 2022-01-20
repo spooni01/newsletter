@@ -1,5 +1,4 @@
 <div class="wrap">
-    
     <div>
         <h1>Spooni Newsletter</h1>
     </div>
