@@ -102,6 +102,35 @@ function save_hash($user_id, $generate_new = false) {
 }
 
 
+/** FUNCTIONS FOR STATISTICS **/
+
+function get_num_of_all_emails_seen() {
+    $num = 0;
+
+    $all_emails = get_posts(array(
+        "post_type" => "emails",
+        "meta_key" => "spooni_newsletter_email_seen",
+    ));
+    foreach($all_emails as $email) 
+        $num += get_post_meta($email->ID, "spooni_newsletter_email_seen", true);
+
+    return $num;
+}
+
+function get_num_of_all_emails_send() {
+    $num = 0;
+
+    $all_emails = get_posts(array(
+        "post_type" => "emails",
+        "meta_key" => "spooni_newsletter_email_sends",
+    ));
+    foreach($all_emails as $email) 
+        $num += get_post_meta($email->ID, "spooni_newsletter_email_sends", true);
+
+    return $num;
+}
+
+
 /** FUNCTIONS FOR PARAMETERS **/
 
 function parameter_exist($parameter) {
@@ -125,6 +154,7 @@ function necessary_parameters_exist($array) {
     }
     return true;
 }
+
 
 /** OTHER FUNCTIONS **/
 
@@ -159,6 +189,8 @@ function add_num_in_post_meta($post_id, $meta_key) {
     update_post_meta($post_id, $meta_key, $num);
 }
 
-
+function get_recent_emails($num = 10) {
+    return get_posts(array("post_type"=>"emails","orderby" => "date","order" => "DESC","posts_per_page" => $num));
+}
 
 ?>
