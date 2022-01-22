@@ -1,5 +1,5 @@
 <?php
-/** PLUGIN PAGES **/  
+/** PLUGIN PAGES LOAD **/  
 
 function main_page() {
 	if (can_manage_options()) 
@@ -54,6 +54,20 @@ function get_emails_by_meta_value_of_taxonomy($slugs_of_groups, $meta_value) {
     }
 
     return $return_emails;
+}
+
+// Return description of first taxonomy that is checked in post by post ID.
+function get_first_checked_tax_description_of_post($tax, $post_id) {
+    $terms = get_the_terms($post_id, $tax);
+    foreach($terms as $term) 
+        return $term->description;
+}
+
+// Return name of first taxonomy that is checked in post by post ID.
+function get_first_checked_tax_name_of_post($tax, $post_id) {
+    $terms = get_the_terms($post_id, $tax);
+    foreach($terms as $term) 
+        return $term->name;
 }
 
 

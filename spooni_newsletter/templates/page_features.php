@@ -17,7 +17,9 @@
                         <tr>
                             <th><label for="spooni_newsletter_group_<?php _e($term->slug); ?>"><?php _e($term->name); ?></label></th>
                             <td>
-                                <?php echo get_bloginfo('wpurl');?>/?src=spooni_newsletter&action=subscribe&group=<?php _e($term->slug); ?>
+                                <a target="_blank" href="<?php echo get_bloginfo('wpurl');?>/?src=spooni_newsletter&action=subscribe&group=<?php _e($term->slug); ?>">
+                                    <?php echo get_bloginfo('wpurl');?>/?src=spooni_newsletter&action=subscribe&group=<?php _e($term->slug); ?>
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -36,12 +38,7 @@
         You can also get <i>{{last_name}}</i>, <i>{{name}}</i>, or <i>{{email}}</i>.
     </p>
     <hr>
-    <p>
-        You are now using <span style="color: red;"><b><i>demo version</i></b></span>.
-    </p>
-    <p>
-        You can get the full version by contacting <a href="https://github.com/spooni01" target="blank">Spooni</a>.
-    </p>
+   
     <p>
         All rights reserved.<br>
         No part of this program cannot be spread or changed without the written consent of the author.<br>

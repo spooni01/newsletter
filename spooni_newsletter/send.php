@@ -23,7 +23,10 @@ function send_emails($post_id) {
     $emails = get_emails_by_meta_value_of_taxonomy($slugs_of_groups, "subscribed");
     $post_title = get_the_title($post_id); 
     $mail_body = get_the_content($post_id);
-    $headers = array("Content-Type: text/html; charset=UTF-8");
+    $headers = "From: ".get_first_checked_tax_description_of_post("spooni_newsletter_domain_emails", $post->ID)." <".get_first_checked_tax_name_of_post("spooni_newsletter_domain_emails", $post->ID).">\r\n";
+    $headers .= "Reply-To: ".get_first_checked_tax_description_of_post("spooni_newsletter_domain_emails", $post->ID)." <".get_first_checked_tax_name_of_post("spooni_newsletter_domain_emails", $post->ID).">\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8";
+
     $num_of_emails = 0;
 
     foreach($emails as $email) {
