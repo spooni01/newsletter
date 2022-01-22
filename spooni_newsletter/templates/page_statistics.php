@@ -10,7 +10,7 @@
         </div>
         <div style="display:inline-block; width:45%;text-align:center">
             <div style="font-size:50px; margin: 1rem; font-weight: 600"><?php echo round(get_num_of_all_emails_send(), 2); ?></h2></div>
-            <div>Total number of emails send</div>
+            <div>Total number of emails</div>
         </div>
     </div>
     <div style="margin-top:3rem">

@@ -1,16 +1,6 @@
 <?php
 add_action("publish_emails", "send_emails");
 
-// Send email to user
-function send($email, $post_title, $mail_body, $headers) {
-    $user_id = get_user_by("email", $mail);
-    $hash = get_user_hash($user_id);
-
-    $mail_footer .= "<div><a href='www.google.sk/?hash=".$hash."&usid=".$user_id."'>Odhlásiť sa z newslettra</div>";
-
-    wp_mail($email, $post_title, $mail_body, $headers);  
-}
-
 // Send emails to all users who subscribe one of Groups 
 // taxonomy that is checked in custom post type 'email'
 function send_emails($post_id) {

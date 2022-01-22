@@ -12,7 +12,7 @@
                     <?php if(isset($_GET['error'])) { echo $_GET['error']; } else { echo $error_msg; }; ?>
                 </div>
             <?php endif; ?>    
-            <form action="<?php echo home_url(); ?>/?src=spooni_newsletter&action=add_subscribe&group=obchod" method="POST">
+            <form action="<?php echo home_url(); ?>/?src=spooni_newsletter&action=add_subscribe&group=<?php echo $_GET['group']; ?>" method="POST">
                 Your e-mail:
                 <input type="email" name="email" style="font-size: 15px;padding: 1rem;width: 93%;">
                 <input type="submit" value="Subscribe" style="width: 100%;background: #607d8b;padding: 1rem;font-weight: 600;color: white;font-size: 17px;margin-top: 1rem;border: none;cursor:pointer">
