@@ -3,7 +3,7 @@
  * Plugin Name: Newsletter
  * Plugin URI: https://github.com/spooni01/newsletter
  * Description: Newsletter for Wordpress site.
- * Version: 1.0
+ * Version: 1.1
  * Author: Adam Ližičiar
  * Author URI: http://www.adam.liziciar.sk
  */

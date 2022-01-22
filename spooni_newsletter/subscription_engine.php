@@ -41,6 +41,7 @@ function load_subscription_engine_template() {
                 wp_create_user($_POST["email"], generate_password(), $_POST["email"]);
                 $user = get_user_by("email", $_POST["email"]);
                 update_user_meta($user->ID, $_GET["group"], "subscribed");
+                save_hash($user->ID);
             }
             
             include(plugin_dir_path( __FILE__ )."templates/template_page_subscribe_done.php");

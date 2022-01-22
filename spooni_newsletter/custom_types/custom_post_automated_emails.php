@@ -25,6 +25,6 @@ function custom_post_spooni_newsletter_automated_emails() {
         )
     );
 }
-//add_action("init", "custom_post_spooni_newsletter_automated_emails");
+add_action("init", "custom_post_spooni_newsletter_automated_emails");
 
 ?>
